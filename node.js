@@ -553,7 +553,8 @@ app.get('/:shop_id/get-products', async (req, res)=>{
 
 // server listener
 
-app.listen(3000, ()=>{
+app.listen('https://pannapulsefood.onrender.com', ()=>{
     console.log(`Server is live on localhost:3000`);
 
 });
+

@@ -49,7 +49,7 @@ const upload = multer({
 const uri = process.env.MONGO_URI;
 let db;
 
-mongoose.connect('mongodb://localhost:27017/pannapulseDb')
+mongoose.connect(process.env.MONGO_URI)
 .then(()=> console.log('Connected to MongoDB'))
 .catch((err)=> console.log('Error', err));
 
@@ -555,4 +555,5 @@ app.get('/:shop_id/get-products', async (req, res)=>{
 
 app.listen(3000, ()=>{
     console.log(`Server is live on localhost:3000`);
+
 });

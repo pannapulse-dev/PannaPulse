@@ -7,6 +7,10 @@
     display: none;
 }
 
+button{
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* 1st interface */
 
 body{
@@ -1673,4 +1677,5 @@ h1 {
     border: 0.6px solid black;
     color: #000;
     background-color: white;
+
 }

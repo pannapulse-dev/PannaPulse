@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PannaPulse</title>
+    <link rel="website icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="Main_body_header">
+        <div class="logoPanna">
+            <img src="logo.png">
+        </div>
+        <div class="account">
+            <button id="accButton">
+            <div id="image_Index">
+                <img src="profile.png" id="Nav_profile">
+            </div>
+            </button>
+            <label for="accButton">Account</label>
+        </div>
+    </header>
+    <div class="services">
+        <button class="butservice" id="orderFood"><i class="fa-solid fa-utensils"></i> Food & snacks</button>
+        <button class="butservice" id="groceries"><i class="fa-solid fa-cart-shopping"></i> Groceries</button>
+    </div>
+
+    <!-- Account clicked -->
+
+    <div class="clkAcc">
+        <div class="profileInfo">
+            <div id="userName">
+                <span id="name"></span>
+                <span id="mobileNo"></span>
+            </div>
+        </div>
+        <button class="options_menu_button" type="button" id="clkprofile">
+            <div id="profileImage">
+                <img src="profile.png" id="menu_profile">
+            </div>
+        </button>
+        <button type="button" id="clsAcc">X</button>
+        <div class="options_account">
+            <hr>
+            <button class="options_menu_button" id="addAddress"><i class="fa-solid fa-location"></i>&nbsp; Address</button>
+            <button class="options_menu_button" id="Cart"><i class="fa-solid fa-cart-plus"></i>&nbsp; Cart</button>
+            <button class="options_menu_button" id="myOrders"><i class="fa-solid fa-box-open"></i>&nbsp; My Orders</button>
+            <button class="options_menu_button" id="addShop"><i class="fa-solid fa-store"></i>&nbsp; Open Shop</button>
+        </div>
+        <button type="button" id="openLoginMenu">
+            <i class="fa-solid fa-arrow-right-to-bracket" id="logOut-login-icon"></i>
+            Login
+        </button>
+    </div>
+
+<!-- Upload Picture Menu -->
+
+    <div class="upldPicContainer">
+        <div class="uploadPicMenu">
+            <div id="headPic">
+                <span>Change profile</span>
+                <button type="button" id="clsPicMenu">X</button>
+            </div>
+            <div class="dialogue_profile">
+                <label for="ChangeProfile" id="ChangeProfile_label">
+                    <img src="profile.png" id="ImagePic"><br>
+                    <span>Choose Profile </span>
+                </label>
+                <form>
+                    <input type="file" accept="image/*" id="ChangeProfile"><br>
+                    <button type="submit" id="cnfrProfile">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Login || sign up webpage -->
+
+    <div id="LoginPage_Body">
+        <button id="clsLoginPage">X</button>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <div class="Selection">
+                <button id="Login_Select">Login</button>
+                <button id="Signup_Select" autofocus>Register</button>
+            </div>
+            <form id="Signup_form">
+                <input type="text" placeholder="First name" id="First_Name" autocomplete="off" spellcheck="false"><br>
+                <input type="text" placeholder="Last name" id="Last_Name" autocomplete="off" spellcheck="false"><br>
+                <input type="number" placeholder="Mobile No." id="Mobile_No" autocomplete="off"><br>
+                <input type="email" placeholder="email" id="Signup_Email" autocomplete="off" spellcheck="false">
+                <button type="button" class="Send_signup_otp">Send OTP</button><br>
+                <input type="number" placeholder="OTP" id="Signup_Otp" autocomplete="off"><br>
+                <button type="submit" id="Signup_user">Sign-up</button>
+            </form>
+            <form id="Login_form">
+                <input type="email" placeholder="email" id="Login_Email">
+                <button type="button" class="Send_Login_otp">Send OTP</button><br>
+                <input type="number" placeholder="OTP" id="Login_Otp"><br>
+                <button type="submit" id="Login_user">Login</button>
+            </form>
+        </div>
+    </div>
+
+<!-- Add adress -->
+
+<div id="container_Address_Body">
+    <div id="container_Address">
+        <header id="container_Address_Header">Add address <button type="button" id="cls_Address_Container">X</button></header>
+        
+        <form id="address_Form">
+            <input type="text" placeholder="address" id="userAddressInput">
+            <button type="submit" id="address_Form_Button">Save</button>
+        </form>
+    </div>
+</div>
+
+<!-- Become a seller -->
+
+    <div id="seller_body">
+        <button id="cls_add_shop_page">X</button>
+        <div id="selectionShop">
+            <button type="button" class="selShopBtn" id="registerShop">Register</button>
+            <button type="button" class="selShopBtn" id="loginShop" autofocus>Login Shop</button>
+        </div>
+        <div id="Shop_add_container">
+            <header><img src="shop.png" alt="logo" height="190px" id="shop_Logo_Image"></header>
+            <div id="formShop">
+
+                <!-- Register Shop -->
+
+                <form id="shop_Add_Form">
+                    <input type="text" placeholder="Shop Name" id="shop_Name" spellcheck="false">
+                    <input type="text" placeholder="Address" id="shop_Address" spellcheck="false">
+                    <select id="shopType" aria-placeholder="Select">
+                        <option>Food and snacks</option>
+                        <option>Groceries</option>
+                    </select>
+                    <input type="number" placeholder="Whatsapp number" id="WA_Number">
+                    <input type="password" placeholder="Password" id="Add_shop_password">
+                    <button type="submit" id="cnfr_Add_Shop">Save</button>
+                </form>
+            </div>
+
+                <!-- Login Shop -->
+                 
+            <div id="LoginShopBox">
+                <form id="shop_Login_Form">
+                    <input type="number" placeholder="Number" id="Login_Shop_Number">
+                    <input type="password" placeholder="Password" id="Login_Shop_Password">
+                    <button type="submit" id="login_Shop_Cnfr">Login</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+<!-- Error Page -->
+
+    <div id="error_Body">
+        <div id="error_box">
+            <header id="error_header">
+                <center><h3>Error!</h3></center>
+                <button type="button" id="clsError">X</button>
+            </header>
+            <div id="error_message">
+                <p id="error_message_p">Login or Sign-up first!</p>
+            </div>
+        </div>
+    </div>
+
+<!-- add product -->
+
+    <div id="addProduct_Body">
+        <button id="cls_add_product_page">X</button>
+        <div id="addProduct_Container">
+            <header id="addProduct_Header">
+                <img src="Products.png" id="addProduct_Image">
+            </header>
+            <div id="addProduct_Box">
+                <form id="addProduct_Form">
+                    <select id="productType">
+                        <option value="Food and snacks">Food and snacks</option>
+                        <option value="Groceries">Groceries</option>
+                    </select>
+                    <input type="text" placeholder="Product name" spellcheck="false" autocomplete="off" autocorrect="off" id="productName">
+                    <input type="number" placeholder="Price" id="ProductPrice">
+                    <div id="productQuantity_div">
+                        <input type="number" placeholder="Quantity" spellcheck="false" autocomplete="off" autocorrect="off" id="productQuantity">
+                        <select id="productQuantityType">
+                            <option>PCS</option>
+                            <option>Kg</option>
+                            <option>Gram</option>
+                            <option>Plate</option>
+                        </select>
+                    </div>
+                    <div id="ProductImageBox">
+                        <label for="productImage" class="custom-box" id="dropImageZone">
+                            <span id="uploadText">Click to add product image</span>
+                            <img src="" id="imagePreview">
+                            <input type="file" accept="image/*" id="productImage" hidden>
+                        </label>
+                    </div>
+                    <button type="submit" id="save_Product">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Shop option :- All products -->
+
+<div class="allProductsBody">
+    <button type="button" id="clsAllProducts">X</button>
+    <header id="ShopNameheader"></header>
+    <div class="allProductsDisplayShop">
+
+    </div>
+</div>
+
+<!-- Main display -->
+
+    <div id="allProductsDisplay">
+        <div id="foodAndSnacksCatalogue">
+            
+        </div>
+        <div id="groceriesCatalogue">
+
+        </div>
+    </div>
+
+<!-- Update products -->
+
+    <div id="updateProduct_Body">
+        <div id="updateProduct_Container">
+            <header id="updateProduct_Header">Update Product <button type="button" id="clsUpdateProduct">X</button></header>
+            <div id="updateProduct_Box">
+                <form id="updateProduct_Form">
+                    <input type="text" id="UpdateProduct_id" placeholder="Product id" readonly>
+                    <select id="updateProperty">
+                        <option>Price</option>
+                    </select>
+                    <input type="number" min="1" id="newProductPrice" placeholder="New price">
+                    <button type="submit" id="cnfrUpdateProduct">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Cart -->
+
+    <div id="cart_Body">
+        <header id="cart_Header">
+            <i class="fa-solid fa-cart-shopping"></i>&nbsp; <span>Cart</span>
+            <button type="button" id="clsCart">X</button>
+        </header>
+        <div id="cart_Box">
+        </div>
+        <footer id="cart_footer">
+            <div id="totalCartAmount_box">
+                <span id="totalCartAmount_box_span">Total amount</span>
+                <span id="totalCartAmount_box_amount"></span>
+            </div>
+            <button type="button" id="orderFromCart">Order</button>
+        </footer>
+    </div>
+
+<!-- Orders -->
+
+    <div id="myOrders_Body">
+        <header id="myOrders_Header">
+            <span>MY ORDERS</span>
+            <button type="button" id="cls_MyOrders">X</button>
+        </header>
+        <div id="myOrders_Box">
+            
+        </div>
+    </div>
+
+<!-- Shop dashboard -->
+
+    <div id="shopDashboard_Body" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f4f7f6; z-index:2000; overflow-y:auto;">
+    <header style="background:#000; color:#fff; padding:20px; display:flex; justify-content:space-between;">
+        <span>SHOP DASHBOARD</span>
+        <button id="clsDashboard" style="color:#fff; background:none; font-size:20px;">X</button>
+    </header>
+
+    <div id="dashboard_Stats" style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; padding:20px;">
+        <div style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+            <small>Total Orders</small>
+            <h2 id="stat_totalOrders">0</h2>
+        </div>
+        <div style="background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+            <small>Total Revenue</small>
+            <h2 id="stat_totalRevenue">Rs. 0</h2>
+        </div>
+    </div>
+
+    <div style="padding:0 20px;">
+        <h3>Product Sales Performance</h3>
+        <div id="product_sales_list" style="background:#fff; border-radius:10px; padding:10px; margin-top:10px;">
+            </div>
+    </div>
+</div>
+
+<!-- Bill and total amount -->
+
+<div id="bill_Body">
+    <div id="bill_Container">
+        <button id="cls_Bill">X</button>
+        <div class="amountClass" id="Amount1">
+            <span class="align1" id="s1">Item price : </span>
+            <span class="align2" id="s2"></span>
+        </div>
+        <div class="amountClass" id="Amount2">
+            <span class="align1" id="a1">Packaging Charges : </span>
+            <span class="align2" id="a2">Rs. 15</span>
+        </div>
+        <div class="amountClass" id="Amount3">
+            <span class="align1" id="b1">Delivery Charges : </span>
+            <span class="align2" id="b2"></span>
+        </div>
+        <hr>
+        <div class="amountClass" id="finalAmount">
+            <span class="align1" id="c1">Total Amount : </span>
+            <span class="align2" id="c2"></span>
+        </div>
+        <button type="button" id="PlaceOrder">Place Order</button>
+    </div>
+</div>
+
+</body>
+<script src="logic.js"></script>
+</html>

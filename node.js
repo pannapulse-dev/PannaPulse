@@ -552,7 +552,8 @@ app.get('/:shop_id/get-products', async (req, res)=>{
 
 // server listener
 
-app.listen(Port, ()=>{
+app.listen(Port, '0.0.0.0', ()=>{
     console.log(`Server is live on localhost:${Port}`);
 
 });
+

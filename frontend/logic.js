@@ -2,7 +2,7 @@ const savedShopData = localStorage.getItem('shopData');
 const shopData = (savedShopData && savedShopData !== "undefined") ? JSON.parse(savedShopData) : null;
 
 
-const Port = 'http://localhost:5400'
+const Port = 'https://pannapulsebackend.onrender.com' || 'http://localhost:5400'
 
 // Click Account
 
@@ -1398,4 +1398,5 @@ function loadShopDashboard() {
                 </div>
             </div>
         `).join('') : '<p style="padding:10px; color:gray;">No sales recorded yet.</p>';
+
 };

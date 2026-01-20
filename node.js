@@ -84,6 +84,9 @@ const transporter = nodemailer.createTransport({
     auth:{
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    },
+    tls: {
+        rejectUnauthorized: false // Helps bypass some network restrictions
     }
 });
 
@@ -559,5 +562,6 @@ app.listen(Port, '0.0.0.0', ()=>{
     console.log(`Server is live on localhost:${Port}`);
 
 });
+
 
 

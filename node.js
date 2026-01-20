@@ -15,7 +15,7 @@ const path = require('path');
 
 const app = express();
 
-const Port = 5400;
+const Port = process.env.PORT || 5400;
 
 
 app.use(cors());
@@ -552,6 +552,7 @@ app.get('/:shop_id/get-products', async (req, res)=>{
 
 // server listener
 
-app.listen(5400, ()=>{
+app.listen(Port, ()=>{
     console.log(`Server is live on localhost:${Port}`);
+
 });

@@ -461,7 +461,6 @@ input::-webkit-outer-spin-button{
 }
 .container{
     background: rgba(255, 255, 255, 0.95);
-    height: 90%;
     width: 100%;
     max-width: 400px;
     border: none;
@@ -573,7 +572,6 @@ input:focus {
 }
 @media (max-width: 2000px){
     .container{
-        height: 700px;
         padding: 30px 20px;
         box-shadow: none;
     }
@@ -1680,4 +1678,5 @@ h1 {
     background-color: white;
 
 }
+
 

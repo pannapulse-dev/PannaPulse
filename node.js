@@ -13,6 +13,10 @@ const { type } = require('os');
 const { create } = require('domain');
 const path = require('path');
 
+const {Resend} = require('resend');
+
+const resend = new Resend('re_JFzwT6cd_KvR2RvU1kd3gW1ZvRoGkGSLY')
+
 const app = express();
 
 const Port = process.env.PORT || 5400;
@@ -162,7 +166,7 @@ app.post('/auth/send-signup-otp', async (req, res)=>{
     const otp = generateOTP();
     otpStore[email] = otp;
 
-const mailOptions = {
+const mailOptions = await resend.emails.send({
     from: `"PannaPulse Support" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: `${otp} is your PannaPulse verification code`, 
@@ -184,7 +188,7 @@ const mailOptions = {
         </div>
     </div>
     `
-};
+});
     try{
         await transporter.sendMail(mailOptions);
         res.status(200).json({message: 'OTP sent successfully'})
@@ -235,7 +239,7 @@ app.post('/auth/send-login-otp', async (req, res)=>{
         const otp = generateOTP();
         otpStore[email] = otp;
 
-        const mailOptions = {
+        const mailOptions = await resend.emails.send({
     from: `"PannaPulse Support" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: `${otp} is your PannaPulse verification code`, 
@@ -257,7 +261,7 @@ app.post('/auth/send-login-otp', async (req, res)=>{
         </div>
     </div>
     `
-    }
+    });
     await transporter.sendMail(mailOptions);
     res.status(200).json({message: 'OTP sent successfully'})
     }catch(err){
@@ -562,6 +566,7 @@ app.listen(Port, '0.0.0.0', ()=>{
     console.log(`Server is live on localhost:${Port}`);
 
 });
+
 
 
 

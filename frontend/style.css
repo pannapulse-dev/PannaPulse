@@ -573,7 +573,7 @@ input:focus {
 }
 @media (max-width: 2000px){
     .container{
-        height: 95%;
+        height: 700px;
         padding: 30px 20px;
         box-shadow: none;
     }
@@ -1680,3 +1680,4 @@ h1 {
     background-color: white;
 
 }
+

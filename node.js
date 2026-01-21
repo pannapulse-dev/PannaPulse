@@ -239,7 +239,7 @@ app.post('/auth/send-login-otp', async (req, res)=>{
         otpStore[email] = otp;
 
         const mailOptions = await resend.emails.send({
-    from: `"PannaPulse Support" <onboarding@resend.dev`,
+    from: `"PannaPulse Support" <onboarding@resend.dev>`,
     to: email,
     subject: `${otp} is your PannaPulse verification code`, 
     html: `
@@ -564,6 +564,7 @@ app.listen(Port, '0.0.0.0', ()=>{
     console.log(`Server is live on localhost:${Port}`);
 
 });
+
 
 
 

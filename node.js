@@ -167,7 +167,7 @@ app.post('/auth/send-signup-otp', async (req, res)=>{
     otpStore[email] = otp;
 
 const mailOptions = await resend.emails.send({
-    from: `"PannaPulse Support" <${process.env.EMAIL_USER}>`,
+    from: `"PannaPulse Support" <onboarding@resend.dev>`,
     to: email,
     subject: `${otp} is your PannaPulse verification code`, 
     html: `
@@ -190,7 +190,6 @@ const mailOptions = await resend.emails.send({
     `
 });
     try{
-        await transporter.sendMail(mailOptions);
         res.status(200).json({message: 'OTP sent successfully'})
     }catch(err){
         console.log('mail error', err);
@@ -240,7 +239,7 @@ app.post('/auth/send-login-otp', async (req, res)=>{
         otpStore[email] = otp;
 
         const mailOptions = await resend.emails.send({
-    from: `"PannaPulse Support" <${process.env.EMAIL_USER}>`,
+    from: `"PannaPulse Support" <onboarding@resend.dev`,
     to: email,
     subject: `${otp} is your PannaPulse verification code`, 
     html: `
@@ -262,7 +261,6 @@ app.post('/auth/send-login-otp', async (req, res)=>{
     </div>
     `
     });
-    await transporter.sendMail(mailOptions);
     res.status(200).json({message: 'OTP sent successfully'})
     }catch(err){
         res.status(500).json({message: 'failed to send otp'})
@@ -566,6 +564,7 @@ app.listen(Port, '0.0.0.0', ()=>{
     console.log(`Server is live on localhost:${Port}`);
 
 });
+
 
 
 

@@ -488,8 +488,8 @@ app.post('/place-order', async (req, res) => {
         `<li>${item.name} (x${item.quantity}) from <b>${item.shopName || 'General Store'} ${item.shopNumber} ${item.shopAdd}</b></li>`
     ).join('');
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
+await resend.emails.send({
+    from: `"PannaPulse Support" <onboarding@resend.dev>`,
         to: process.env.EMAIL_USER,
         subject: `New Order from ${customer.name}`,
         html: `
@@ -501,8 +501,7 @@ app.post('/place-order', async (req, res) => {
             <hr>
             </div>
         `
-    };
-    await transporter.sendMail(mailOptions);
+    });
     res.status(200).json({ message: "Order processed" });
 });
 
@@ -518,8 +517,8 @@ app.post('/place-orderpreview', async (req, res) => {
         `<li>${item.name} (x${item.quantity}) from <b>${item.shopName || 'General Store'} ${item.shopNumber} ${item.shopAdd}</b></li>`
     ).join('');
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
+await resend.emails.send({
+    from: `"PannaPulse Support" <onboarding@resend.dev>`,
         to: process.env.EMAIL_USER, // Your admin email
         subject: `New Order from ${customer.name}`,
         html: `
@@ -529,18 +528,9 @@ app.post('/place-orderpreview', async (req, res) => {
             <ul>${productListHTML}</ul>
             <p><b>Total Amount:</b> ${total}</p>
             <hr>
-            <div style="display: flex; gap: 10px;">
-                <a href="http://localhost:3000/order-action?action=confirm&id=123" 
-                   style="background: green; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
-                   Confirm Order
-                </a>
-                <a href="http://localhost:3000/order-action?action=decline&id=123" 
-                   style="background: red; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
-                   Decline Order
-                </a>
-            </div>
+
         `
-    };
+    });
 
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Order processed" });
@@ -564,6 +554,7 @@ app.listen(Port, '0.0.0.0', ()=>{
     console.log(`Server is live on localhost:${Port}`);
 
 });
+
 
 
 

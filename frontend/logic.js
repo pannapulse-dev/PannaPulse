@@ -594,7 +594,7 @@ async function handleProductUpload() {
     const savedShop = JSON.parse(rawData);
 
     const newProductName = document.querySelector('#productName').value;
-    const newProductPrice = Number(document.querySelector('#ProductPrice').value) * commissionVal;
+    const newProductPrice = (Number(document.querySelector('#ProductPrice').value) * commissionVal).toFixed(2);
     const newProductQuantity = Number(document.querySelector('#productQuantity').value);
     const newProductQuantityType = document.querySelector('#productQuantityType').value;
     const newProductCategory = document.querySelector('#productType').value;
@@ -1400,4 +1400,5 @@ function loadShopDashboard() {
         `).join('') : '<p style="padding:10px; color:gray;">No sales recorded yet.</p>';
 
 };
+
 
